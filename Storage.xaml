@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfDatabase.Storage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDatabase"
+        mc:Ignorable="d"
+        Title="Storage" Height="450" Width="650" Loaded="Window_Loaded">
+    <Grid Margin="10">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="StorageLBLoc" Grid.Column="0" SelectionChanged="StorageLBLoc_SelectionChanged" />
+        <ListBox x:Name="StorageLBPacks" Grid.Column="1" SelectionChanged="StorageLBPacks_SelectionChanged"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+            <Button x:Name="AddBtn" Content="Přidat Pack k lokaci"  MinWidth="200" Margin="25 10" Click="AddBtn_Click" />
+            <Button x:Name="RmvBtn" Content="Odebrat Pack z lokace" MinWidth="200" Margin="25 10" Click="RmvBtn_Click" IsEnabled="False" />
+        </StackPanel>
+        
+    </Grid>
+</Window>
